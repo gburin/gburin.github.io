@@ -12,4 +12,4 @@ Please, feel free to leave any feedback! Any suggestion will be greatly apprecia
 
 <a href="https://www.youtube.com/watch?v=RSZuK7Tu53E" target="_blank"><img src="/images/evolution.png" alt="Presentation by Gustavo Burin @ Evolution 2015" width="480" height="360" border="0" /></a>
 
-If the image quality is not so good, you can see the slides in [this link.](gburin.github.io/presentations/evolution2015/evolpres_GBF.html)
+If the image quality is not so good, you can see the slides in [this link.]({{ site.baseurl }}/presentations/evolution2015/evolpres_GBF.html)
