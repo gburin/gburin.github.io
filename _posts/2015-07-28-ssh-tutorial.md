@@ -80,8 +80,8 @@ Ao editar esse arquivo, basta inserir na primeira coluna o endereço de IP da m�
 255.255.255.255 broadcasthost
 ::1             localhost
 fe80::1%lo0     localhost
-143.107.246.251 labmeme1
-143.107.246.253 jabba
+143.107.xxx.xxx labmeme1
+143.107.yyy.yyy jabba
 ```
 
 Após atribuir um *alias* (nome que damos a qualquer "codinome" de um objeto ou função em UNIX) aos servidores, podemos nos conectar a eles tanto através do endereço de IP quanto através de seu *alias*.
@@ -104,8 +104,8 @@ Neste exemplo, o mesmo nome do servidor foi atribuído ao seu , porém isso pode
 255.255.255.255 broadcasthost
 ::1             localhost
 fe80::1%lo0     localhost
-143.107.246.251 servidor-mac
-143.107.246.253 servidor-linux
+143.107.xxx.xxx servidor-mac
+143.107.yyy.yyy servidor-linux
 ```
 
 Aqui o acesso seria feito da seguinte maneira:
@@ -172,7 +172,7 @@ Copiando vários arquivos ou pasta
 Agora, vamos copiar a pasta *phylogenies* localizada na pasta */home/usuario/* para a pasta *~/Dropbox*.
 
 ``` r
-$ scp -r usuario@143.107.246.251:~/usuario/phylogenies ~/Dropbox
+$ scp -r usuario@143.107.xxx.xxx:~/usuario/phylogenies ~/Dropbox
 ```
 
 Lembre-se de tomar cuidado com os caminhos para os arquivos. Verifique se você está na pasta desejada para usar a forma simplificada de caminho, ou certifique-se de passar o caminho completo do(s) arquivo(s)/pasta(s) a ser(em) copiados(as).
