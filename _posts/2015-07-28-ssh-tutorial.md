@@ -33,19 +33,6 @@ $ man ssh
 
 que abre o manual deste programa. (Esta sintaxe pode ser usada para qualquer programa na linha de comando. *Ex. man cp, man emacs, etc.*)
 
-Apesar de vários desses argumentos serem importantes, para nosso acesso aos servidores *labmeme1*, *jabba* e *leia* usaremos a sintaxe básica. Os servidores do **LabMeMe** estão configurados no endereço:
-
-``` r
-labmeme1: 143.107.246.251
-jabba: 143.107.246.253
-leia: 192.168.0.1 (ip interno, acesso via jabba)
-```
-
-Sendo assim, para acessar o servidor *jabba*, por exemplo, o usuário deve digitar:
-
-``` r
-$ ssh usuario@143.107.246.253
-```
 
 No primeiro acesso, uma mensagem de aviso aparecerá perguntando se você tem certeza se quer continuar.
 
