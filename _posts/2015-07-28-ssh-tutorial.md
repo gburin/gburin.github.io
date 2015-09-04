@@ -193,3 +193,14 @@ Este comando copiou a pasta de filogenias diretamente para o servidor ao qual no
 ``` r
 $ scp -r -P 8020 usuario@localhost:~/projects/phylogenies ~/backup/
 ```
+
+Copiando arquivos usando o *rsync*
+--------------------------------------
+
+Recentemente descobri outro programa que pode ser usado para copiar arquivos de e para o servidor, chamado *rsync*. Ele apresenta uma característica que o coloca na frente do scp: ele consegue retomar transferências que falharam ao analisar quais arquivos já foram copiados e continuando dali para frente. A utilização dele é bastante parecida com a do scp, e geralmente uso apenas dois argumentos.
+
+``` r
+$ rsync -r -v ~/Dropbox/exemplos usuario@servidor:~/apostilas
+```
+
+onde **-r** indica que a cópia deve ser recursiva, ou seja, que arquivos localizados em subpastas também devem ser copiados, e **-v** indica *verbose*, ou seja, ele imprime na tela a lista dos arquivos à medida em que são copiados.
