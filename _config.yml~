@@ -58,5 +58,7 @@ paginate:     3
 sass:
   compressed: true
 
-gems: [jekyll-paginate]
+gems:
+  - jekyll-gist 
+  - jekyll-paginate
 encoding: UTF-8
