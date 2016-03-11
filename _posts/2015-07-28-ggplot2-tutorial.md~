@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      Tutorial de ggplot2
+date:       2015-07-28 14:05:19
+summary:    Tutorial básico de uso do pacote ggplot2 (ainda em desenvolvimento)
+categories: post
+tags:       portuguese, portugues
+permalink:  /tutorial-ggplot2.html
+encoding:   utf-8
+---
+
 O pacote ggplot2
 ================
 
@@ -113,7 +124,7 @@ Isso se deve ao fato de que nenhuma camada de gráfico foi adicionada, ou seja, 
 g1 + geom_boxplot()
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-9-1.png)
 
 Note a sintaxe bastante intuitiva que usa o símbolo "+" para adicionar camadas. Isso torna o *ggplot2* um pacote bastante prático ~~depois de pegar o jeito~~ para criar gráficos informativos, bonitos e prontos para publicação.
 
@@ -125,7 +136,7 @@ ggplot(diamonds,aes(x=price)) + geom_histogram()
 
     ## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-10-1.png)
 
 Observe no entanto que para o histograma a variável de interesse está no eixo *x*, já que o eixo *y* contém a contagem de valores em cada intervalo.
 
@@ -143,7 +154,7 @@ g2 <- ggplot(diamonds,aes(x=carat,y=price))
 g2 + geom_point()
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-11-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-11-1.png)
 
 Note que no exemplo acima, estamos indicando para a função ggplot que as camadas que forem adicionadas de agora em diante devem conter os valores de *carat* no eixo *x* e de *price* no eixo *y*. Isso pode ser modificado posteriormente (como nos casos onde você quer por exemplo acrescentar uma outra variável no eixo *y*), e será exemplificado mais adiante. No entanto, a maioria (se não todas) das funções da família **geom\_** também possuem os argumentos básicos *data* e *mapping*. Sendo assim, uma outra forma de criar o mesmo gráfico é:
 
@@ -151,7 +162,7 @@ Note que no exemplo acima, estamos indicando para a função ggplot que as camad
 ggplot() + geom_point(data=diamonds,mapping=aes(x=carat,y=price))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-12-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-12-1.png)
 
 Caso a cor padrão ~~seja feia~~ não seja adequada, podemos indicar para o gráfico qual cor queremos usar para os pontos. Como cor é um dos componentes essenciais da parte estética de um gráfico, essa especificação deve entrar na função *aes*.
 
@@ -159,7 +170,7 @@ Caso a cor padrão ~~seja feia~~ não seja adequada, podemos indicar para o grá
 g2 + geom_point(mapping=aes(colour="red"))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-13-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-13-1.png)
 
 Ao analisarmos o conteúdo do objeto **diamonds** notamos que os valores de *carat* e *price* são divididos por classe de *cut*, *color* e *clarity*. Assim, podemos por exemplo representar o mesmo conjunto de dados separados por classe de *clarity* por exemplo. Se seu objeto contendo os dados estiver mal organizado, você levaria um tempo razoável para adicionar uma cada para cada classe cada uma com uma cor diferente. Porém, como já aprendemos a organizar nossos dados de maneira idea, podemos facilmente usar a variável *clarity* para atribuir diferentes cores que representarão cada uma das classes da seguinte forma:
 
@@ -167,7 +178,7 @@ Ao analisarmos o conteúdo do objeto **diamonds** notamos que os valores de *car
 g2 + geom_point(mapping=aes(colour=clarity))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-14-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-14-1.png)
 
 Essa separação em classes de *clarity* pode ser feita em outros tipos de gráfico também (os *outliers* foram removidos para fins de visualização):
 
@@ -177,7 +188,7 @@ ggplot(data=diamonds,
            geom_boxplot(outlier.shape=NA)
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-15-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-15-1.png)
 
 ### Adicionando linhas de tendência
 
@@ -187,7 +198,7 @@ Os gráficos de dispersão que construímos até agora indicam que existe uma re
 g2 + geom_point(aes(color=clarity)) + geom_smooth(method = "lm", se=FALSE, aes(color="red"))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-16-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-16-1.png)
 
 A linha de regressão adicionada no gráfico anterior corresponde à correlação entre *carat* e *price* indepentende da classe de *clarity*. Porém, dependendo do caso pode ser mais interessante criar uma reta de correlação para cada classe de *clarity*. Fazemos isso da seguinte forma (adicionando também intervalos de confiança da média):
 
@@ -196,7 +207,7 @@ g3 <- g2 + geom_point(aes(color=clarity)) + geom_smooth(method = "lm", se=TRUE, 
 g3
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-17-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-17-1.png)
 
 Personalizando os gráficos
 ==========================
@@ -208,7 +219,7 @@ Alterar rótulos dos eixos
 g3 + xlab("Quilates") + ylab("Preco")
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-18-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-18-1.png)
 
 Alterar limites dos eixos
 -------------------------
@@ -217,7 +228,7 @@ Alterar limites dos eixos
 g3 + xlim(0,10) + ylim(0,30000)
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-19-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-19-1.png)
 
 Alterar tamanho e direção das fontes dos eixos
 ----------------------------------------------
@@ -226,7 +237,7 @@ Alterar tamanho e direção das fontes dos eixos
 g3 + theme(axis.text.x = element_text(angle=45,vjust=1,size=30))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-20-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-20-1.png)
 
 Inserir anotações
 -----------------
@@ -235,7 +246,7 @@ Inserir anotações
 g3 + xlim(0,10) + ylim(0,30000) + annotate("text",x=9.5,y=30000,label= "Painel a",color="red")
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-21-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-21-1.png)
 
 ``` r
 g3 + xlim(0,10) + ylim(0,30000) +
@@ -243,7 +254,7 @@ g3 + xlim(0,10) + ylim(0,30000) +
              ymax=20000, alpha=.2, color="blue",fill="green")
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-22-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-22-1.png)
 
 ``` r
 g3 + xlim(0,10) + ylim(0,30000) +
@@ -251,7 +262,7 @@ g3 + xlim(0,10) + ylim(0,30000) +
              color="orange", arrow=arrow(length=unit(1,"cm")))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-23-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-23-1.png)
 
 Alterar paleta de cores
 -----------------------
@@ -260,7 +271,7 @@ Alterar paleta de cores
 g2 + geom_point(aes(color=clarity)) + scale_color_brewer(type="seq",palette="Set3")
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-24-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-24-1.png)
 
 Separar gráficos em painéis
 ---------------------------
@@ -269,19 +280,19 @@ Separar gráficos em painéis
 g2 + geom_point(aes(color=clarity)) + facet_grid(. ~ cut)
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-25-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-25-1.png)
 
 ``` r
 g2 + geom_point(aes(color=clarity)) + facet_grid(cut ~ .)
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-26-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-26-1.png)
 
 ``` r
 g2 + geom_point(aes(color=clarity)) + facet_grid(cut ~ clarity)
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-27-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-27-1.png)
 
 Alterar posição, título e tamanho da legenda
 --------------------------------------------
@@ -290,31 +301,31 @@ Alterar posição, título e tamanho da legenda
 g3 + xlim(0,10) + ylim(0,30000) + theme(legend.position = "none")
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-28-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-28-1.png)
 
 ``` r
 g3 + xlim(0,10) + ylim(0,30000) + theme(legend.position = "bottom")
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-29-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-29-1.png)
 
 ``` r
 g3 + xlim(0,10) + ylim(0,30000) + theme(legend.position = "bottom", legend.title = element_blank())
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-30-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-30-1.png)
 
 ``` r
 g3 + xlim(0,10) + ylim(0,30000) + theme(legend.position = c(.8,.8))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-31-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-31-1.png)
 
 ``` r
 g3 + xlim(0,10) + ylim(0,30000) + theme(legend.position = c(.8,.2))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-32-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-32-1.png)
 
 Alterar temas
 -------------
@@ -323,13 +334,13 @@ Alterar temas
 g3 + theme_bw()
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-33-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-33-1.png)
 
 ``` r
 g3 + theme(panel.grid.major = element_line(colour = "red", linetype = "dotted"), panel.background = element_rect(fill = "green"))
 ```
 
-![](ggplot2_files/figure-markdown_github/unnamed-chunk-34-1.png)
+![]({{ site.baseurl }}/assets/ggplot2-tutorial-figs/unnamed-chunk-34-1.png)
 
 Principais tipos de gráfico
 ===========================
