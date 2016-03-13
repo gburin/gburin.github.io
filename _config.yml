@@ -5,7 +5,7 @@ author:      Gustavo Burin
 description: ""
 baseurl:     ""
 url:         "http://gburin.github.io"
-=======
+
 title: Pixyll
 email: your_email@example.com
 author: John Otander
@@ -13,7 +13,6 @@ description: "A simple, beautiful theme for Jekyll that emphasizes content rathe
 baseurl: ""
 url: "http://pixyll.com"
 google_analytics: UA-53548208-1
->>>>>>> Copy over gh-pages config.
 
 # Build settings
 markdown: kramdown
