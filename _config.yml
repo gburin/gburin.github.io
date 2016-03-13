@@ -6,12 +6,12 @@ description: ""
 baseurl:     ""
 url:         "http://gburin.github.io"
 
-title: Pixyll
-email: your_email@example.com
-author: John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title: Gustavo Burin
+email: arietebio@gmail.com
+author: Gustavo Burin
+description: "Macroevolution, macroecology, open science, and random shenanigans"
 baseurl: ""
-url: "http://pixyll.com"
+url: "http://gburin.github.io"
 google_analytics: UA-53548208-1
 
 # Build settings
