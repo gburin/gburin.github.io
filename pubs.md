@@ -6,7 +6,7 @@ layout: default
 
 #### 2016
 
-**Burin, G.**, Kissling, W.D., Guimarães, P.R., Sekercioglu, C.H.,
+- **Burin, G.**, Kissling, W.D., Guimarães, P.R., Sekercioglu, C.H.,
 Quental, T.B.,
 **Omnivory in birds is a macroevolutionary sink**.
 Nature Communications 7:11250
