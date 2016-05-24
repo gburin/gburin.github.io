@@ -18,4 +18,4 @@ Associated with that, there is a prevalence of transitions from all
 guilds into omnivory. Based on these two patterns, we decided to call
 omnivores a "macroevolutionary sink".
 
-The links for the abstract and the PDF are available [here](/pubs.md)
+The links for the abstract and the PDF are available [here](/pubs/)
